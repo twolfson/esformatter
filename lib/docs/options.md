@@ -2,8 +2,43 @@
 This document aims to document/provide examples of each option.
 
 ## Notes
-// TODO: Break down into `whitespace` and `linebreak` sections
-// TODO: Grab any non-hooks `_ws` or `_br` calls
+// TODO: Break down into `whitespace`, `linebreak`, and `indent` sections
+// TODO: Handle indent
+
+## esformatter.js
+  // Effectively all esprima tokens
+  function transformNode(node) {
+    _ws.limitBefore(node.startToken, node.type);
+    _ws.limitAfter(node.endToken, node.type);
+
+  // Comments
+  function processComment(token) {
+    _ws.limitBefore(token, token.type);
+    // only block comment needs space afterwards
+    if (token.type === 'BlockComment') {
+      _ws.limitAfter(token, token.type);
+    }
+  }
+
+  expressionParentheses.addSpaceInside(node);
+  // see "expression parentheses"
+
+  // brs
+  function transform(ast, opts) {
+    _br.limitBeforeEndOfFile(ast);
+
+  function preprocessToken(token) {
+    if (_tk.isComment(token)) {
+      _br.limit(token, token.type);
+    }
+
+  addBrAroundNode(node);
+  Top level sooo basically everything
+    _br.limitBefore(node.startToken, type);
+
+    if (_tk.isSemiColon(node.endToken)) {
+      _br.limitAfter(node.endToken, type);
+    }
 
 ### hooks/ArrayExpression.js
 ```js
