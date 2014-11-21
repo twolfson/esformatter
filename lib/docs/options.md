@@ -3,7 +3,6 @@ This document aims to document/provide examples of each option.
 
 ## Notes
 // TODO: Break down into `whitespace`, `linebreak`, and `indent` sections
-// TODO: Handle indent
 
 ## esformatter.js
   // Effectively all esprima tokens
@@ -39,6 +38,10 @@ This document aims to document/provide examples of each option.
     if (_tk.isSemiColon(node.endToken)) {
       _br.limitAfter(node.endToken, type);
     }
+
+  // All esprima nodes
+  function getIndentLevel(node) {
+    var value = _opts[node.type];
 
 ### hooks/ArrayExpression.js
 ```js
