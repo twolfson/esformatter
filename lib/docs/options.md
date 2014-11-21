@@ -4,8 +4,104 @@ This document aims to document/provide examples of each option.
 ## Notes
 // TODO: Break down into `whitespace`, `linebreak`, and `indent` sections
 
-## esformatter.js
-  // Effectively all esprima tokens
+## Whitespace
+Each of the following is a valid key for both whitespace `before` and `after` unless noted otherwise.
+
+// Nodes
+// https://github.com/facebook/esprima/blob/4001.1001.0000-dev-harmony-fb/esprima.js#L127-L203
+ArrayExpression
+ArrayPattern
+ArrowFunctionExpression
+AssignmentExpression
+BinaryExpression
+BlockStatement
+BreakStatement
+CallExpression
+CatchClause
+ClassBody
+ClassDeclaration
+ClassExpression
+ComprehensionBlock
+ComprehensionExpression
+ConditionalExpression
+ContinueStatement
+DebuggerStatement
+DoWhileStatement
+EmptyStatement
+ExportDeclaration
+ExportBatchSpecifier
+ExportSpecifier
+ExpressionStatement
+ForInStatement
+ForOfStatement
+ForStatement
+FunctionDeclaration
+FunctionExpression
+Identifier
+IfStatement
+ImportDeclaration
+ImportSpecifier
+LabeledStatement
+Literal
+LogicalExpression
+MemberExpression
+MethodDefinition
+ModuleDeclaration
+NewExpression
+ObjectExpression
+ObjectPattern
+Program
+Property
+ReturnStatement
+SequenceExpression
+SpreadElement
+SpreadProperty
+SwitchCase
+SwitchStatement
+TaggedTemplateExpression
+TemplateElement
+TemplateLiteral
+ThisExpression
+ThrowStatement
+TryStatement
+TypeAnnotatedIdentifier
+TypeAnnotation
+UnaryExpression
+UpdateExpression
+VariableDeclaration
+VariableDeclarator
+WhileStatement
+WithStatement
+XJSIdentifier
+XJSNamespacedName
+XJSMemberExpression
+XJSEmptyExpression
+XJSExpressionContainer
+XJSElement
+XJSClosingElement
+XJSOpeningElement
+XJSAttribute
+XJSSpreadAttribute
+XJSText
+YieldExpression
+
+// TODO: Do we present access to these outside? How is `processComment` handled?
+// Tokens
+https://github.com/facebook/esprima/blob/4001.1001.0000-dev-harmony-fb/esprima.js#L104-L114
+Boolean
+<end>
+Identifier
+Keyword
+Null
+Numeric
+Punctuator
+String
+XJSIdentifier
+XJSText
+RegularExpression
+
+### esformatter.js
+  // Effectively all esprima nodes
   function transformNode(node) {
     _ws.limitBefore(node.startToken, node.type);
     _ws.limitAfter(node.endToken, node.type);
@@ -18,6 +114,12 @@ This document aims to document/provide examples of each option.
       _ws.limitAfter(token, token.type);
     }
   }
+  .type === .type ===
+    if (token.type === 'BlockComment') {
+    if (token.type === 'BlockComment') {
+    if (token.type === 'BlockComment') {
+    if (token.type === 'BlockComment') {
+
 
   expressionParentheses.addSpaceInside(node);
   // see "expression parentheses"
