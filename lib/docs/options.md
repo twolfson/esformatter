@@ -7,6 +7,16 @@ This document aims to document/provide examples of each option.
 ## Whitespace
 Each of the following is a valid key for both whitespace `before` and `after` unless noted otherwise.
 
+// TODO: Instead of handcrafting this, let's automate it...
+//   Create a demo script for each flavor
+//   Iterate over esprima.Syntax
+//   Find the matching ast node
+//   Find its start and end
+//   Measure the distance to the start of the line
+//   Go to the end of the line/file
+//   Add a new line
+//   Indicate where the start and end were
+
 // Nodes
 // https://github.com/facebook/esprima/blob/4001.1001.0000-dev-harmony-fb/esprima.js#L127-L203
 ArrayExpression
